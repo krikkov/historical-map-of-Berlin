@@ -1,0 +1,117 @@
+@import "maplibre-gl/dist/maplibre-gl.css";
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #1a1813;
+  overflow: hidden;
+}
+
+.font-display {
+  font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* стекло панелей */
+.panel {
+  background: linear-gradient(150deg, rgba(253, 250, 241, 0.94), rgba(243, 237, 222, 0.9));
+  border: 1px solid rgba(90, 76, 52, 0.28);
+  box-shadow:
+    0 18px 45px -18px rgba(40, 30, 15, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.panel-dark {
+  background: linear-gradient(150deg, rgba(32, 28, 22, 0.92), rgba(22, 20, 16, 0.88));
+  border: 1px solid rgba(214, 191, 143, 0.22);
+  box-shadow: 0 18px 45px -18px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+/* слайдер года */
+input[type="range"].year-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 26px;
+  background: transparent;
+  width: 100%;
+}
+input[type="range"].year-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6e5c3a, #b99a62, #d9c7a0);
+  border: 1px solid rgba(60, 48, 28, 0.4);
+}
+input[type="range"].year-range::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6e5c3a, #b99a62, #d9c7a0);
+}
+input[type="range"].year-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fffaf0, #c2a86f 60%, #7a6338);
+  border: 1px solid #4b3c20;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: grab;
+}
+input[type="range"].year-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fffaf0, #c2a86f 60%, #7a6338);
+  border: 1px solid #4b3c20;
+  cursor: grab;
+}
+
+/* попапы maplibre в стиле приложения */
+.maplibregl-popup-content {
+  background: linear-gradient(150deg, #fdfaf1, #efe7d4);
+  border: 1px solid rgba(90, 76, 52, 0.35);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: inherit;
+  box-shadow: 0 16px 36px -14px rgba(40, 30, 15, 0.6);
+  max-width: 280px;
+}
+.maplibregl-popup-tip {
+  border-top-color: #f3ead6 !important;
+  border-bottom-color: #f3ead6 !important;
+}
+.maplibregl-ctrl-group {
+  background: rgba(250, 245, 233, 0.95) !important;
+  border: 1px solid rgba(90, 76, 52, 0.3) !important;
+}
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: rgba(90, 76, 52, 0.35);
+  border-radius: 3px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.35); }
+}
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
